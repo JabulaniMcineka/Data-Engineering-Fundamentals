@@ -1,0 +1,109 @@
+# Chapter 5 - Data Generation in Source Systems
+
+## Definition
+A source system is the origin of data used in the data engineering lifecycle.
+Data engineers consume data from source systems but rarely own or control them.
+Understanding how source systems generate data is the foundation of everything else.
+
+## How Data Is Created
+- Analog - speech, writing, instruments converted into digital form
+- Digital - natively created by apps, sensors, transactions, and devices
+- Every source system has unique patterns, quirks, and characteristics you must learn
+
+## Main Types of Source Systems
+
+### Files and Unstructured Data
+- Common formats: CSV, JSON, XML, Excel, TXT
+- Files are a universal medium of data exchange
+- Many organisations still send and receive data as files
+
+### Application Databases (OLTP)
+- Store the current state of an application
+- Optimised for fast reads and writes of individual records
+- High concurrency, low latency, ACID compliant
+- Not suited for large analytical queries
+
+### OLAP Systems
+- Optimised for large analytical queries
+- Used for data warehouses and reporting
+- Opposite of OLTP — scan large volumes, not individual records
+
+### APIs
+- REST - most common, stateless HTTP-based data exchange
+- GraphQL - flexible queries across multiple data models
+- Webhooks - event-based, source pushes data to consumer (reverse API)
+- gRPC - Google's efficient bidirectional RPC framework
+
+### Logs
+- Capture who, what, and when for every event
+- Types: binary (compact), semistructured (JSON), plain text
+- Critical for monitoring, debugging, and ML
+
+### Message Queues and Event Streaming
+- Message queue - sends discrete messages, delivered once then removed
+- Event streaming platform - ordered append-only log, data retained over time
+- Examples: Apache Kafka, Amazon SQS, Google Pub/Sub
+
+## Key Database Types to Know
+
+| Database Type | Best For | Examples |
+|---|---|---|
+| Relational (RDBMS) | Transactional apps, structured data | PostgreSQL, MySQL |
+| Key-Value | Caching, session data, fast lookups | Redis, DynamoDB |
+| Document | Flexible schema, nested JSON data | MongoDB, Firestore |
+| Wide-Column | Massive scale, high write rates | Cassandra, Bigtable |
+| Graph | Connected data, relationships | Neo4j, Amazon Neptune |
+| Search | Text search, log analysis | Elasticsearch, Solr |
+| Time Series | IoT, metrics, sensor data | InfluxDB, Apache Druid |
+
+## Critical Concepts
+
+### ACID
+- Atomicity - all or nothing transactions
+- Consistency - reads always return the latest written value
+- Isolation - concurrent updates do not interfere with each other
+- Durability - committed data is never lost
+
+### CDC - Change Data Capture
+- Captures every insert, update, and delete event in a database
+- Used to replicate data in near real time or create event streams
+- Critical for building data pipelines from transactional databases
+
+### CRUD vs Insert-Only
+- CRUD - create, read, update, delete — standard app pattern
+- Insert-only - never update, always insert a new record with a timestamp
+- Insert-only preserves full history but tables grow large over time
+
+### Types of Time
+- Event time - when the event actually happened in the source system
+- Ingestion time - when the event arrived in your pipeline
+- Process time - when the event was transformed or processed
+- Always record all three timestamps in your pipelines
+
+## Key Insight
+Source systems are usually outside your control but they are your responsibility.
+Bad data from source systems causes problems downstream.
+Build strong relationships with source system teams, set up data contracts,
+and establish SLAs to protect your pipelines from upstream surprises.
+
+## Key Terms I Learned
+- OLTP - Online Transaction Processing, optimised for fast individual reads and writes
+- OLAP - Online Analytical Processing, optimised for large analytical queries
+- CDC - Change Data Capture, tracking every change in a source database
+- ACID - database transaction guarantees
+- REST - Representational State Transfer, the most common API style
+- Webhook - reverse API where the source pushes events to the consumer
+- gRPC - Google's efficient remote procedure call framework
+- Idempotent - processing a message once produces the same result as processing it many times
+- Data contract - written agreement between source system owner and data engineer
+- SLA - Service Level Agreement, expectations for system uptime and data quality
+- Insert-only - pattern where records are never updated, only new ones are inserted
+- Event time - when an event actually occurred in the source system
+- Hotspotting - when one partition receives a disproportionate number of messages
+
+## What This Means for Me
+At AHRI I already work with source systems including clinical databases and APIs.
+I need to be more deliberate about setting up data contracts with source system owners,
+monitoring for schema changes, and recording event, ingestion, and process timestamps
+in my pipelines. Understanding CDC deeply will help me build better real-time pipelines
+which is exactly what Entelect is looking for.

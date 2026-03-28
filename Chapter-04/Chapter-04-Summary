@@ -1,0 +1,60 @@
+# Chapter 4 - Choosing Technologies Across the Data Engineering Lifecycle
+
+## Definition
+Technology choices are tactical decisions that bring your architecture to life.
+Architecture is the what, why, and when.
+Technology is the how.
+Always get your architecture right before choosing your tools.
+
+## The Most Important Rule
+- Architecture first, technology second
+- Never choose tools before you have a clear architecture
+- Does this technology add value to the data product and the business?
+
+## Key Considerations When Choosing Technology
+1. Team size and capabilities - match tools to your team's skills and bandwidth
+2. Speed to market - deliver value early and often, perfect is the enemy of good
+3. Interoperability - tools must connect and work well together
+4. Cost optimization - evaluate TCO, TOCO, and FinOps before committing
+5. Immutable vs transitory - build on tools that stand the test of time
+6. Location - on premises, cloud, hybrid, or multicloud
+7. Build vs buy - buy by default, build only for competitive advantage
+8. Monolith vs modular - prefer modular and loosely coupled systems
+9. Serverless vs servers - start serverless, move to servers when you outgrow it
+
+## Key Insight
+Immutable technologies like SQL, Python, Bash, and object storage
+will outlast most of the shiny new tools that come and go.
+The Lindy Effect says the longer a technology has been around,
+the longer it will continue to be used. Invest in the fundamentals.
+
+## Cost Terms to Know
+- TCO - Total Cost of Ownership, all direct and indirect costs
+- TOCO - Total Opportunity Cost, what you gave up by choosing this tool
+- Capex - large up-front investment, avoid where possible
+- Opex - pay as you go, preferred approach in the cloud
+
+## Build vs Buy
+- Default to open source and managed services
+- Build only when it creates a genuine competitive advantage
+- OSS - free community maintained tools like Airflow and dbt
+- COSS - managed commercial versions like Databricks and dbt Cloud
+
+## Key Terms I Learned
+- Immutable technology - stands the test of time (SQL, S3, Linux, Python)
+- Transitory technology - comes and goes (most frameworks and platforms)
+- Lindy Effect - older technology is likely to stick around longer
+- Cargo-cult engineering - copying big tech without having their resources
+- Data gravity - once data is in a cloud it is expensive to move out
+- Lift and shift - moving servers to cloud without optimising for cloud
+- COSS - Commercial Open Source Software
+- Serverless - running code without managing infrastructure
+- Distributed monolith - distributed system with all the problems of a monolith
+
+## What This Means for Me
+I already use Airflow, dbt, and AWS in my projects which are
+exactly the kinds of modular, interoperable tools this chapter recommends.
+I need to focus on understanding the cost and trade-offs of each tool
+and always ask whether a technology adds real value to the business
+before adopting it. Fundamentals like SQL and Python will always matter more
+than chasing the latest tool or framework.

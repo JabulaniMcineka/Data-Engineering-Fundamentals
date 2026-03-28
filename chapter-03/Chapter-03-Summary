@@ -1,0 +1,49 @@
+# Chapter 3 - Designing Good Data Architecture
+
+## Definition
+Data architecture is the design of systems to support the evolving
+data needs of an enterprise, achieved by flexible and reversible
+decisions reached through careful evaluation of trade-offs.
+
+## Two Types of Data Architecture
+- Operational - describes WHAT needs to happen (people, processes, business goals)
+- Technical - describes HOW it will happen (ingestion, storage, transformation, serving)
+
+## The 9 Principles of Good Data Architecture
+1. Choose common components wisely
+2. Plan for failure
+3. Architect for scalability
+4. Architecture is leadership
+5. Always be architecting
+6. Build loosely coupled systems
+7. Make reversible decisions
+8. Prioritize security
+9. Embrace FinOps
+
+## Key Insight
+Good architecture is never finished.
+It evolves constantly in response to business needs and new technology.
+Always prefer reversible decisions - two-way doors - over one-way doors.
+
+## Types of Data Architecture
+- Data Warehouse - structured, formatted data for reporting and analytics
+- Data Lake - stores all data structured and unstructured in one place
+- Data Lakehouse - combines the best of both warehouse and lake
+- Modern Data Stack - cloud-based plug-and-play modular tools
+- Data Mesh - decentralised, each domain owns and serves its own data
+
+## Key Terms I Learned
+- ETL - Extract Transform Load
+- ELT - Extract Load Transform
+- ACID - data transaction standards (Atomicity Consistency Isolation Durability)
+- FinOps - managing cloud costs like an engineering discipline
+- RTO - Recovery Time Objective, how fast must we recover after failure
+- RPO - Recovery Point Objective, how much data loss is acceptable
+- Loose Coupling - services are independent and communicate through APIs
+- Monolith - one large system doing everything, simple to start but hard to scale
+
+## What This Means for Me
+I need to understand the trade-offs between different architecture patterns.
+At Entelect I will work with data warehouses, data lakes, and modern data stack tools.
+Knowing when to use each one, and why, is what separates a good data engineer
+from someone who just follows instructions.
